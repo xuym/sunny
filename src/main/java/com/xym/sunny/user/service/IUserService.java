@@ -1,5 +1,6 @@
 package com.xym.sunny.user.service;
 
+import com.xym.sunny.base.entity.Response;
 import com.xym.sunny.user.dao.entity.User;
 
 /**
@@ -21,5 +22,12 @@ public interface IUserService {
 	 * @return boolean
 	 */
 	boolean isExistUser(User user);
+	
+	/**
+	 * 登录
+	 * @param user User
+	 * @return 用户对象
+	 */
+	Response<User> getUser(User user);
 
 }

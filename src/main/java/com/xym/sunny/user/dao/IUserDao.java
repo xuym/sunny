@@ -20,12 +20,20 @@ public interface IUserDao {
      * @return User
      */
     public User findUser(User user);
+    
     /**
      * 插入一条用户信息
      * @param user User实体类
      * @return Integer
      */
     public Integer insert(User user);
+    
+    /**
+     * 登录
+     * @param user User
+     * @return User对象
+     */
+    public User getUser(User user);
     
    
 }

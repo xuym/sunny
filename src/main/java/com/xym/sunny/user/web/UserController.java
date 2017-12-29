@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xym.sunny.base.entity.Response;
 import com.xym.sunny.user.dao.entity.User;
 import com.xym.sunny.user.service.IUserService;
 
@@ -34,6 +35,12 @@ public class UserController {
 	@RequestMapping(value = "/isExistUser", method = RequestMethod.POST)
 	public Object isExistUser(@RequestBody User user) {
 		return userService.isExistUser(user);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public Response<User> login(@RequestBody User user) {
+		return userService.getUser(user);
 	}
 
 }
